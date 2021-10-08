@@ -1,6 +1,7 @@
 package com.example.examenjava2021;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,6 +19,7 @@ public class CalidadAire {
 
     public static void  main( String[] args){
 
+        //--------------------------------------------------------------//
         Set<Integer> MedidasTodasLasAulas = new HashSet<>();
 
         for(int i=0; i<LELECTRONICA.length; i++) {
@@ -33,6 +35,37 @@ public class CalidadAire {
         }
 
         System.out.println(MedidasTodasLasAulas.toString());
+
+        //----------------------------------------------------------------//
+
+
+        HashMap<Integer, String> MayorDe800ppm = new HashMap<>();
+
+        int cantidadMedidasElectronica = 0;
+        int cantidadMedidasTelematica = 0;
+        int cantidadMedidasAula9 = 0;
+
+        for (int i = 0; i < LELECTRONICA.length; i++) {
+            if (LELECTRONICA[i] > 800) {
+                cantidadMedidasElectronica += 1;
+            }
+            MayorDe800ppm.put(cantidadMedidasElectronica, "LELECTRONICA");
+        }
+
+        for (int i = 0; i < LTELEMATICA.length; i++) {
+            if (LTELEMATICA[i]>800){
+                cantidadMedidasTelematica += 1;
+            }
+            MayorDe800ppm.put(cantidadMedidasTelematica,"LTELEMATICA");
+        }
+
+        for (int i = 0; i < AULA9.length; i++) {
+            if (AULA9[i]>800){
+                cantidadMedidasAula9 += 1;
+            }
+            MayorDe800ppm.put(cantidadMedidasAula9,"AULA9");
+        }
+            System.out.println("ppm de las aulas que han alcanzado 800ppm" + MayorDe800ppm.toString() );
 
     }
 
