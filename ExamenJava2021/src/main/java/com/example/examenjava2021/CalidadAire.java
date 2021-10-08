@@ -1,7 +1,9 @@
 package com.example.examenjava2021;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CalidadAire {
 
@@ -16,7 +18,21 @@ public class CalidadAire {
 
     public static void  main( String[] args){
 
+        Set<Integer> MedidasTodasLasAulas = new HashSet<>();
 
+        for(int i=0; i<LELECTRONICA.length; i++) {
+            MedidasTodasLasAulas.add(LELECTRONICA[i]);
+        }
+
+        for(int i=0; i<LTELEMATICA.length; i++) {
+            MedidasTodasLasAulas.add(LTELEMATICA[i]);
+        }
+
+        for(int i=0; i<AULA9.length; i++) {
+            MedidasTodasLasAulas.add(AULA9[i]);
+        }
+
+        System.out.println(MedidasTodasLasAulas.toString());
 
     }
 
